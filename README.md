@@ -2,7 +2,7 @@
 
 This is a Go package that provides:
 
-* Functionality for ejecting the CD tray.
+* Functionality for ejecting & closing the CD tray.
 * The constants from `linux/cdrom.h`.
 
 [Online Documentation](https://godoc.org/github.com/xyproto/cdrom)
