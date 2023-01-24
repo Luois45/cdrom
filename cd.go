@@ -34,6 +34,14 @@ func (cd *CD) Eject() error {
 	return nil
 }
 
+// Closetray performs IOCTL calls, using CDROMCLOSETRAY on the current file descriptor
+func (cd *CD) Closetray() error {
+	if _, err := unix.IoctlGetInt(cd.fileDescriptor, CDROMCLOSETRAY); err != nil {
+		return err
+	}
+	return nil
+}
+
 // Done closes the file descriptor
 func (cd *CD) Done() error {
 	return syscall.Close(cd.fileDescriptor)
